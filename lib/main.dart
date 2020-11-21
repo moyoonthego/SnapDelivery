@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     FacebookButton(onclick: () => {}),
                     StoreTile(
-                      imagesrc: AssetImage('lib/assets/images/pinch.png'),
+                      imagesrc: AssetImage('lib/assets/images/snap.png'),
                       storename: 'McDonalds',
                       address: '251 Gleave Terrace, Eglinton Rd. East',
                       rating: 3.7,

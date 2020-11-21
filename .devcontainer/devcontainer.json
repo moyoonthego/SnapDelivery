@@ -1,5 +1,5 @@
 {
-  "name": "pinch_customer_app",
+  "name": "snap_customer_app",
   "context": "..",
   "dockerFile": "../Dockerfile.dev",
   "remoteUser": "developer",

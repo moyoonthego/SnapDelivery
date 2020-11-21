@@ -1,7 +1,7 @@
 // This file exports all our custom Dart widgets
 
-export 'pinchbutton.dart';
-export 'pinchbuttoniconed.dart';
+export 'Snapbutton.dart';
+export 'Snapbuttoniconed.dart';
 export 'pinchbuttondisabled.dart';
 export 'pinchbuttonswitch.dart';
 export 'pinchbuttonwhite.dart';
