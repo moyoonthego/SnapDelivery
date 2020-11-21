@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# This script basically just acts like npm scripts
+# Run by typing `bash run <name>`
+
+# Pulls the main git repo and all the subrepos
+function pull() {
+  git pull;
+  git subrepo pull lib/shared-assets;
+}
+
+# Pushes the main git repo and all the subrepos
+function push() {
+  git push;
+  git subrepo push lib/shared-assets;
+}
+
+# Runs flutter doctor
+function doctor() {
+  flutter doctor;
+}
+
+# Starts flutter
+function start() {
+  flutter start;
+}
+
+# Run a function name in the context of this script
+eval "$@"

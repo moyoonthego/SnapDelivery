@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Pinch-Delivery/PinchAssets.git
+	branch = master
+	commit = 7474972b598ec2e69fdf163d0992da1a9a101399
+	parent = 9eaa182329660f6395108c66140dfc769311c04d
+	method = merge
+	cmdver = 0.4.1
