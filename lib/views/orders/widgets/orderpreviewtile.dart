@@ -1,5 +1,5 @@
 import 'package:app/models/orders.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button.dart';
 import 'package:app/views/orders/orderdetails.dart';
 import 'package:app/views/orders/trackorder.dart';
 import 'package:flutter/material.dart';
@@ -146,7 +146,7 @@ class OrderPreviewTile extends StatelessWidget {
               ),
             ),
           ),
-          // Order ID (Pinch internal)
+          // Order ID (Snap internal)
           Positioned(
             left: 216,
             top: 93,
@@ -168,7 +168,7 @@ class OrderPreviewTile extends StatelessWidget {
                 orderObj.status == 'Ongoing'
                     ? Container(
                         margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                        child: PinchButton(
+                        child: SnapButton(
                           buttonText: "Track Order",
                           onclick: () => {
                             Navigator.push(
@@ -184,7 +184,7 @@ class OrderPreviewTile extends StatelessWidget {
                 // details button
                 Container(
                   margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                  child: PinchButton(
+                  child: SnapButton(
                     buttonText: "View Details",
                     onclick: () => {
                       Navigator.push(

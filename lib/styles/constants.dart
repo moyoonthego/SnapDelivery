@@ -2,7 +2,7 @@ library constants;
 
 import 'package:flutter/material.dart';
 
-// Pinch colors and accents
+// Snap colors and accents
 const YELLOW = const Color(0xfffec06a);
 const DARKGRAY = const Color(0xffc1c1c1);
 const LIGHTGRAY = const Color(0xffededed);

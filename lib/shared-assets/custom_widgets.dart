@@ -2,11 +2,11 @@
 
 export 'Snapbutton.dart';
 export 'Snapbuttoniconed.dart';
-export 'pinchbuttondisabled.dart';
-export 'pinchbuttonswitch.dart';
-export 'pinchbuttonwhite.dart';
-export 'pinchfloatingbutton.dart';
-export 'pinchbackbutton.dart';
+export 'Snapbuttondisabled.dart';
+export 'Snapbuttonswitch.dart';
+export 'Snapbuttonwhite.dart';
+export 'Snapfloatingbutton.dart';
+export 'Snapbackbutton.dart';
 export 'customfacebookbutton.dart';
 export 'customgooglebutton.dart';
 export 'slideoutdelete.dart';

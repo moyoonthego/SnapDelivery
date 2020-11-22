@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
 // This widget is the White on yellow version of the base classic button style
-class PinchButtonWhite extends StatelessWidget {
-  const PinchButtonWhite({@required this.buttonText, this.onclick});
+class SnapButtonWhite extends StatelessWidget {
+  const SnapButtonWhite({@required this.buttonText, this.onclick});
 
   final String buttonText;
   final VoidCallback onclick;

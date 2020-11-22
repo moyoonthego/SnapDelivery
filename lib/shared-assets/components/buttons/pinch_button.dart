@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
-class PinchButton extends StatelessWidget {
+class SnapButton extends StatelessWidget {
   // This widget is the base classic button style
-  PinchButton(
+  SnapButton(
       {@required this.buttonText,
       this.onclick,
       this.color = Constants.YELLOW,

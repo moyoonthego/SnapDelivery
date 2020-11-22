@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
 // This is the default back button -> define a circleColor to implement circle
-class PinchBackButton extends StatelessWidget {
-  const PinchBackButton({@required this.onclick, this.circleColor});
+class SnapBackButton extends StatelessWidget {
+  const SnapBackButton({@required this.onclick, this.circleColor});
 
   final VoidCallback onclick;
   final Color circleColor;

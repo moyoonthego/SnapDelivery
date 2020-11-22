@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:app/models/menuitems.dart';
 import 'package:app/models/store.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button_back.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button_back.dart';
 import 'package:app/shared-assets/components/displays/banner.dart';
 import 'package:app/shared-assets/components/displays/item_tile.dart';
 import 'package:app/shared-assets/components/displays/profile.dart';
@@ -182,7 +182,7 @@ class StorePage extends StatelessWidget {
             Positioned(
                 left: 10,
                 top: 60,
-                child: PinchBackButton(
+                child: SnapBackButton(
                   onclick: () {
                     Navigator.of(context).pop();
                   },

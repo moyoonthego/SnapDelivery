@@ -3,22 +3,22 @@ import 'package:app/styles/constants.dart' as Constants;
 
 // This is a rendition of the classic button that is initially disabled,
 // and can be programmatically enabled (see comment below)
-class PinchButtonDisabled extends StatefulWidget {
-  PinchButtonDisabled({@required this.buttonText, this.onclick});
+class SnapButtonDisabled extends StatefulWidget {
+  SnapButtonDisabled({@required this.buttonText, this.onclick});
 
   final String buttonText;
   final VoidCallback onclick;
 
-  static _PinchButtonState of(BuildContext context) =>
+  static _SnapButtonState of(BuildContext context) =>
       context.findAncestorStateOfType();
 
   @override
-  _PinchButtonState createState() =>
-      new _PinchButtonState(buttonText: buttonText, onclick: onclick);
+  _SnapButtonState createState() =>
+      new _SnapButtonState(buttonText: buttonText, onclick: onclick);
 }
 
-class _PinchButtonState extends State<PinchButtonDisabled> {
-  _PinchButtonState({@required this.buttonText, this.onclick});
+class _SnapButtonState extends State<SnapButtonDisabled> {
+  _SnapButtonState({@required this.buttonText, this.onclick});
 
   final String buttonText;
   final VoidCallback onclick;
@@ -26,7 +26,7 @@ class _PinchButtonState extends State<PinchButtonDisabled> {
   bool disabled = true;
 
   // IMPORTANT: This button can be enabled with the method below by invoking:
-  // ".of(context).enableButton();" on your instance of PinchButtonDisabled
+  // ".of(context).enableButton();" on your instance of SnapButtonDisabled
   void enableButton() {
     setState(() {
       disabled = !disabled;

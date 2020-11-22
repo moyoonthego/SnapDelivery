@@ -3,8 +3,8 @@ import 'package:app/models/orderselections.dart';
 import 'package:app/models/orderitem.dart';
 import 'package:app/models/orders.dart';
 import 'package:app/models/store.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button_back.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button_back.dart';
 import 'package:app/shared-assets/components/displays/order_item.dart';
 import 'package:app/shared-assets/components/displays/styled_map_view.dart';
 import 'package:app/shared-assets/components/displays/subtotal.dart';
@@ -20,7 +20,7 @@ Widget buildCurrentOrderOptions(context) {
   return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
     Container(
         padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-        child: PinchButton(
+        child: SnapButton(
           buttonText: "Track Order",
           width: 60,
           color: Constants.GREEN,
@@ -32,7 +32,7 @@ Widget buildCurrentOrderOptions(context) {
     Stack(children: [
       Container(
           padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
-          child: PinchButton(
+          child: SnapButton(
             buttonText: "Send Message",
             width: 60,
             color: Constants.BLUE,

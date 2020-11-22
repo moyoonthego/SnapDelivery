@@ -1,3 +1,3 @@
-# Pinch General Assets
-Pinch - Platform Assets, Components, UI and more
+# Snap General Assets
+Snap - Platform Assets, Components, UI and more
 temp

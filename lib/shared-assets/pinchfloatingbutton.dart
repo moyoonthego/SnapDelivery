@@ -3,8 +3,8 @@ import '../constants.dart' as Constants;
 
 // This button is meant to float over the screen during scrolling
 // NOTE: This button is a WIP!! It should inherit from Disabled button too!
-class PinchFloatingButton extends StatelessWidget {
-  const PinchFloatingButton(
+class SnapFloatingButton extends StatelessWidget {
+  const SnapFloatingButton(
       {@required this.buttonText, this.onclick, this.color = Constants.YELLOW});
 
   final String buttonText;

@@ -3,8 +3,8 @@ import 'package:app/models/orderselections.dart';
 import 'package:app/models/orderitem.dart';
 import 'package:app/models/orders.dart';
 import 'package:app/models/store.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button_back.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button_back.dart';
 import 'package:app/shared-assets/components/displays/order_item.dart';
 import 'package:app/shared-assets/components/displays/styled_map_view.dart';
 import 'package:app/shared-assets/components/displays/subtotal.dart';
@@ -84,7 +84,7 @@ class OrderDetailsPage extends StatelessWidget {
               children: [
                 Container(
                     padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    child: PinchBackButton(
+                    child: SnapBackButton(
                         onclick: () => {Navigator.pop(context)})),
                 Container(
                     padding: EdgeInsets.fromLTRB(0, 30, 20, 20),

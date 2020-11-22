@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:app/shared-assets/components/buttons/pinch_button.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button_back.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button_back.dart';
 import 'package:app/shared-assets/components/inputs/styled_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +35,7 @@ class EditAccountPage extends StatelessWidget {
               children: [
                 Container(
                     padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
-                    child: PinchBackButton(
+                    child: SnapBackButton(
                         onclick: () => {Navigator.pop(context)})),
                 Container(
                     padding: EdgeInsets.fromLTRB(0, 30, 20, 20),
@@ -79,7 +79,7 @@ class EditAccountPage extends StatelessWidget {
         ),
         // Submit to save
         Container(
-          child: PinchButton(
+          child: SnapButton(
             buttonText: "Save Account",
             onclick: () {
               checkstatus(firstname);

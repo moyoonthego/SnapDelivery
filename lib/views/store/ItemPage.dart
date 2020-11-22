@@ -1,5 +1,5 @@
 import 'package:app/shared-assets/components/actions/counter_toggle.dart';
-import 'package:app/shared-assets/components/buttons/pinch_button.dart';
+import 'package:app/shared-assets/components/buttons/Snap_button.dart';
 import 'package:app/shared-assets/components/displays/banner.dart';
 import 'package:app/shared-assets/components/actions/option_dropdowns.dart';
 import 'package:flutter/cupertino.dart';
@@ -94,7 +94,7 @@ class ItemPage extends StatelessWidget {
                   SizedBox(height: 15),
                   Center(
                       // TODO: need to figure out how to put the +$$$ thing at the end
-                      child: PinchButton(
+                      child: SnapButton(
                     color: Constants.MCDICKS_PRIMARY,
                     vertPaddingMod: 10,
                     buttonText: 'Add to Cart',

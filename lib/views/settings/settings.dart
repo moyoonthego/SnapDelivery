@@ -53,7 +53,7 @@ class SettingsPage extends StatelessWidget {
                 height: 100,
                 width: 100,
                 child: Image(
-                  image: AssetImage("lib/assets/images/PinchWhite.png"),
+                  image: AssetImage("lib/assets/images/SnapWhite.png"),
                 ))
           ],
         ));

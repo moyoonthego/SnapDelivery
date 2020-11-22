@@ -3,8 +3,8 @@ import '../constants.dart' as Constants;
 
 // this button can toggle on and off-  only difference between this and "Disabled"
 // is color schemes and that USER can switch this on and off + icons
-class PinchButtonSwitch extends StatefulWidget {
-  PinchButtonSwitch(
+class SnapButtonSwitch extends StatefulWidget {
+  SnapButtonSwitch(
       {@required this.buttonText, @required this.icon, this.onclick});
 
   final String buttonText;
@@ -12,12 +12,12 @@ class PinchButtonSwitch extends StatefulWidget {
   final Icon icon;
 
   @override
-  _PinchButtonState createState() => new _PinchButtonState(
+  _SnapButtonState createState() => new _SnapButtonState(
       buttonText: buttonText, onclick: onclick, icon: icon);
 }
 
-class _PinchButtonState extends State<PinchButtonSwitch> {
-  _PinchButtonState(
+class _SnapButtonState extends State<SnapButtonSwitch> {
+  _SnapButtonState(
       {@required this.buttonText, @required this.icon, this.onclick});
 
   final String buttonText;
