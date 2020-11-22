@@ -1,0 +1,4 @@
+#!/bin/bash
+# Generates the code for the Mobx stores
+echo "Generating code for Mobx stores..."
+flutter packages pub run build_runner build
