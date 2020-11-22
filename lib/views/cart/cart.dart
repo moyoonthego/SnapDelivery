@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:app/views/cart/widgets/clearcart.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
-var fillervals = [
+var _fillerVals = [
   OrderItem("1", "1", 2, "Chicken McNuggets", "not needed", 3.59, {
     'Drink': [OrderSelection(name: 'Chocolate Shake', price: 5.45)],
     'Sauces': [
@@ -31,6 +31,10 @@ var fillervals = [
     ]
   }),
 ];
+
+var _fillerAddress = "385 Morrish Rd, Toronto, ON";
+var _fillerStoreName = "McDonald's";
+var _fillerDeliveryRange = "10-20min";
 
 class MyCartPage extends StatelessWidget {
   MyCartPage({Key key}) : super(key: key);
@@ -90,7 +94,7 @@ class MyCartPage extends StatelessWidget {
         // store name
         Container(
           child: Text(
-            "McDonald's",
+            _fillerStoreName,
             style: Constants.LARGE_TEXT_BLACK,
           ),
           padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
@@ -104,7 +108,7 @@ class MyCartPage extends StatelessWidget {
               children: [
                 Text("DELIVER TO - "),
                 Text(
-                  "385 Morrish Rd, Toronto, ON",
+                  _fillerAddress,
                   style: TextStyle(color: Constants.YELLOW),
                 )
               ],
@@ -118,7 +122,7 @@ class MyCartPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Delivery Time: 10-20min",
+                  "Delivery Time: $_fillerDeliveryRange",
                   style: Constants.NORMAL_TEXT_BLACK,
                 ),
                 Align(
@@ -129,7 +133,7 @@ class MyCartPage extends StatelessWidget {
         // header for order items
         _buildHeaderItems(context),
         // order items
-        for (OrderItem item in fillervals)
+        for (OrderItem item in _fillerVals)
           SlideOutDelete(
               deleteActivity: () => {},
               undoActivity: () => {},
@@ -146,7 +150,7 @@ class MyCartPage extends StatelessWidget {
         ),
         // pricing information
         SubtotalTile(
-          allOrderItems: fillervals,
+          allOrderItems: _fillerVals,
           taxesPercentage: 0.13,
         ),
         // submit cart to order

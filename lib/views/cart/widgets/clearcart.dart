@@ -24,7 +24,7 @@ Future<void> onClearCart(BuildContext context) {
             TextButton(
               child: Text('Cancel', style: Constants.NORMAL_TEXT_BLACK),
               onPressed: () {
-                // INSERT DELETION CODE HERE!!!
+                // TODO: INSERT DELETION CODE HERE!!!
                 Navigator.of(context).pop();
               },
             ),
@@ -52,7 +52,7 @@ Future<void> onClearCart(BuildContext context) {
             TextButton(
               child: Text('Cancel', style: Constants.NORMAL_TEXT_BLACK),
               onPressed: () {
-                // INSERT DELETION CODE HERE!!!
+                // TODO: INSERT DELETION CODE HERE!!!
                 Navigator.of(context).pop();
               },
             ),

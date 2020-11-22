@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
-var mockItems = [
+var _fillerItems = [
   OptionDropdownData(title: "Happy Meal Drink", items: [
     OptionDropdownItemData(title: "Sprite"),
     OptionDropdownItemData(title: "Coke"),
@@ -28,22 +28,22 @@ var mockItems = [
   ])
 ];
 
-const mockItemCount = 1;
+const _fillerItemCount = 1;
 
-const mockBannerURL =
+const _fillerBannerURL =
     "https://i2.cdn.turner.com/money/dam/assets/160923092857-mcdonalds-breakfast-happy-meal-340xa.jpg";
 
-final mockTitle = "Happy Meal";
-final mockDesc =
+final _fillerTitle = "Happy Meal";
+final _fillerDesc =
     "When you are looking to feed the kids, look no further than the legendary happy meal";
 
-final SIDE_MARGIN = 10.0;
+const SIDE_MARGIN = 10.0;
 
 class ItemPage extends StatelessWidget {
   ItemPage({Key key}) : super(key: key);
 
   Widget _buildOptions() {
-    return OptionDropdowns(options: mockItems);
+    return OptionDropdowns(options: _fillerItems);
   }
 
   @override
@@ -54,7 +54,7 @@ class ItemPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            BannerPhoto(imagesrc: NetworkImage(mockBannerURL)),
+            BannerPhoto(imagesrc: NetworkImage(_fillerBannerURL)),
             Container(
               margin: EdgeInsets.fromLTRB(SIDE_MARGIN, 0, SIDE_MARGIN, 0),
               child: Column(
@@ -63,7 +63,7 @@ class ItemPage extends StatelessWidget {
                   SizedBox(height: 10),
                   // Title
                   Text(
-                    mockTitle,
+                    _fillerTitle,
                     style: TextStyle(
                         color: Constants.MCDICKS_PRIMARY,
                         fontSize: 24,
@@ -74,7 +74,7 @@ class ItemPage extends StatelessWidget {
                   SizedBox(height: 10),
                   // Description
                   Text(
-                    mockDesc,
+                    _fillerDesc,
                     style: TextStyle(
                         color: Constants.LARGE_TEXT_BLACK.color,
                         fontSize: 14,

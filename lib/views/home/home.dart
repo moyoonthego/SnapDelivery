@@ -1,5 +1,4 @@
 import 'package:app/models/store.dart';
-import 'package:app/shared-assets/components/displays/item_tile.dart';
 import 'package:app/shared-assets/components/displays/store_tile.dart';
 import 'package:app/views/home/widgets/homestatic.dart';
 import 'package:app/views/store/storepage.dart';
@@ -8,10 +7,48 @@ import 'package:flappy_search_bar/search_bar_style.dart';
 import 'package:flutter/material.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
+var _fillerVals = [
+  Store(
+      id: "1",
+      userInfoId: "1",
+      name: "ChaTime",
+      address: '251 Plimington Ave, Toronto, ON',
+      banner:
+          "https://dynamicmedia.zuza.com/zz/m/original_/d/1/d13dfd6f-1141-498f-9eee-5a2c7d5295d2/Chatime___Super_Portrait.jpg",
+      deliveryMethods: [0],
+      deliveryFee: 5,
+      profilePic: "https://images.safe.com/logos/customers/mcdonalds.png",
+      bio: ""),
+  Store(
+      id: "2",
+      userInfoId: "2",
+      name: "Subway",
+      address: '762 Kipling St., Toronto, ON',
+      banner:
+          "https://images.squarespace-cdn.com/content/v1/529fc0c0e4b088b079c3fb6d/1572811400501-S18A4EDLCC6ZNJPL2AUN/ke17ZwdGBToddI8pDm48kKO1Zu0gRyL0iZ3EWhnKj8oUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc2kNPpahUxG_SeZ3lCm9Erx0oSt5CbIck99e5lqgLgKnVTaG8o708mz2pvYLZ45w5/subway+hero.jpg",
+      deliveryMethods: [0],
+      deliveryFee: 6.99,
+      profilePic: "https://images.safe.com/logos/customers/mcdonalds.png",
+      bio: ""),
+  Store(
+      id: "3",
+      userInfoId: "3",
+      name: "McDonalds",
+      deliveryFee: 3.99,
+      address: '365 Nairn Ave., Toronto, ON',
+      banner:
+          "https://i.pinimg.com/originals/d5/56/fa/d556fae6c6ceea6b52ae95faf5ac43c0.jpg",
+      deliveryMethods: [0],
+      profilePic: "https://images.safe.com/logos/customers/mcdonalds.png",
+      bio: "Enjoy delicious McDonalds on us! Mcloving it! Thrice!")
+];
+var _fillerAddress = "385 Morrish Rd, Toronto, ON";
+
+// TODO: we need to add actual search functionality
 Future<List<Store>> search(String search) async {
   await Future.delayed(Duration(milliseconds: 600));
   // search bar narrows by bio containing keyword or store name
-  List<Store> found = fillervals
+  List<Store> found = _fillerVals
       .where((element) =>
           element.bio.toLowerCase().contains(search.toLowerCase()) ||
           element.name.toLowerCase().contains(search))
@@ -30,6 +67,7 @@ class HomePage extends StatelessWidget {
   Widget _buildSearchStoreTile(BuildContext context, Store store) {
     return GestureDetector(
         onTap: () {
+          // TODO: needs to open the right store page
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => StorePage()));
         },
@@ -79,7 +117,7 @@ class HomePage extends StatelessWidget {
                 // header for store address
                 header: Container(
                     padding: EdgeInsets.fromLTRB(10.0, 1.0, 0.0, 7.0),
-                    child: Text("Delivering to - 385 Morrish Rd, Toronto, ON")),
+                    child: Text("Delivering to - $_fillerAddress")),
                 searchBarStyle: SearchBarStyle(
                   backgroundColor: Constants.LIGHTGRAY,
                   padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 0.0),
@@ -87,6 +125,6 @@ class HomePage extends StatelessWidget {
                 ),
                 crossAxisSpacing: 5,
                 // standard body of page (no search)
-                placeHolder: homePageStatic())));
+                placeHolder: homePageStatic(context))));
   }
 }

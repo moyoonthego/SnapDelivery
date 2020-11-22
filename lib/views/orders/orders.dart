@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:app/styles/constants.dart' as Constants;
 import 'package:flutter/src/painting/image_provider.dart';
 
-var fillervals = [
+var _fillerVals = [
   OrderItem("1", "1", 2, "Chicken McNuggets", "not needed", 3.59, {
     'Drink': [OrderSelection(name: 'Chocolate Shake', price: 5.45)],
     'Sauces': [
@@ -27,9 +27,9 @@ var fillervals = [
   }),
 ];
 
-var myorders = [
+var _fillerOrders = [
   Order(
-      orderItems: fillervals,
+      orderItems: _fillerVals,
       storePhoto:
           NetworkImage("https://images.safe.com/logos/customers/mcdonalds.png"),
       storeName: 'McDonalds',
@@ -40,7 +40,7 @@ var myorders = [
       orderInstructions: 'Leave at my door please.',
       startTime: 'Oct 5th 2020, 4:15pm'),
   Order(
-      orderItems: fillervals,
+      orderItems: _fillerVals,
       storePhoto: NetworkImage(
           "https://awards.brandingforum.org/wp-content/uploads/2015/01/Chatime-Logo.jpg"),
       storeName: 'ChaTime',
@@ -51,7 +51,7 @@ var myorders = [
       orderInstructions: 'Leave at my door please.',
       startTime: 'Oct 3rd 2020, 4:35pm'),
   Order(
-      orderItems: fillervals,
+      orderItems: _fillerVals,
       storePhoto: NetworkImage(
           "https://www.subway.com/-/media/_SubwayV2/AboutUs/PressReleases/pressroom_choicemark_450x450.jpg"),
       storeName: 'Subway',
@@ -63,8 +63,8 @@ var myorders = [
       startTime: 'Sept 29th 2020, 1:10pm'),
 ];
 
-class MyOrdersPage extends StatelessWidget {
-  MyOrdersPage({Key key}) : super(key: key);
+class OrdersPage extends StatelessWidget {
+  OrdersPage({Key key}) : super(key: key);
 
   // This widget is the orders page of your application.
 
@@ -100,7 +100,7 @@ class MyOrdersPage extends StatelessWidget {
                   style: Constants.NORMAL_TEXT_GRAY,
                 ))),
         // show all active orders
-        for (Order order in myorders)
+        for (Order order in _fillerOrders)
           if (order.status == 'Ongoing') OrderPreviewTile(orderObj: order),
         // show past orders header
         Container(
@@ -112,7 +112,7 @@ class MyOrdersPage extends StatelessWidget {
                   style: Constants.NORMAL_TEXT_GRAY,
                 ))),
         // show all past orders
-        for (Order order in myorders)
+        for (Order order in _fillerOrders)
           if (order.status != 'Ongoing') OrderPreviewTile(orderObj: order),
       ],
     ));

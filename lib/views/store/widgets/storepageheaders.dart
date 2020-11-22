@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:latlong/latlong.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
-var store = Store(
+var _fillerStore = Store(
     id: "1",
     customColor: Constants.RED,
     userInfoId: "1",
@@ -19,13 +19,16 @@ var store = Store(
     profilePic: "https://images.safe.com/logos/customers/mcdonalds.png",
     bio: "");
 
+var _fillerAddress = "1500 Upper Middle Rd W. Oakv...";
+var _fillerPhoneNumber = "(905) 476-5442";
+
 Widget buildStoreName() {
   // single row containing store name and rating
   return Container(
       margin: EdgeInsets.fromLTRB(20, 20, 0, 20),
       child: Row(children: [
         Text(
-          store.name,
+          _fillerStore.name,
           style: TextStyle(
             color: Constants.RED,
             fontSize: 26,
@@ -51,12 +54,12 @@ Widget buildStoreAddress() {
       margin: EdgeInsets.fromLTRB(20, 0, 0, 5),
       child: Row(children: [
         Text(
-          "1500 Upper Middle Rd W. Oakv...",
+          _fillerAddress,
         ),
         Container(
           margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
           child: Text(
-            "(905) 476-5442",
+            _fillerPhoneNumber,
             style: TextStyle(color: Constants.BLUE),
           ),
         ),
@@ -69,7 +72,7 @@ Widget buildStoreDelivery() {
       margin: EdgeInsets.fromLTRB(20, 0, 0, 20),
       child: Row(children: [
         Text(
-          "~${store.deliveryTime} min Delivery  •  ",
+          "~${_fillerStore.deliveryTime} min Delivery  •  ",
           style: Constants.TINY_TEXT_BLACK,
         ),
         Container(
@@ -79,8 +82,8 @@ Widget buildStoreDelivery() {
         ),
         Container(
           margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-          child:
-              Text("\$${store.deliveryFee}", style: Constants.TINY_TEXT_BLACK),
+          child: Text("\$${_fillerStore.deliveryFee}",
+              style: Constants.TINY_TEXT_BLACK),
         ),
       ]));
 }

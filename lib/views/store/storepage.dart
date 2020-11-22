@@ -14,7 +14,7 @@ import 'package:app/styles/constants.dart' as Constants;
 import 'package:app/views/store/widgets/storepageheaders.dart'
     as StorePageHeaders;
 
-var foundmenuitems = [
+var _fillerMenuItems = [
   MenuItem(
       id: "1",
       name: "Egg McMuffin",
@@ -131,9 +131,9 @@ var foundmenuitems = [
 
 List foundcategories = [];
 
-var storelocation = LatLng(43.443279, -79.736893);
+var _fillerStoreLocation = LatLng(43.443279, -79.736893);
 
-var store = Store(
+var _fillerStore = Store(
     id: "1",
     customColor: Constants.RED,
     userInfoId: "1",
@@ -153,7 +153,7 @@ class StorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // generating list of categories from all menu items.
-    for (var menuitem in foundmenuitems) {
+    for (var menuitem in _fillerMenuItems) {
       for (var cat in menuitem.categories) {
         if (!foundcategories.contains(cat)) {
           foundcategories.add(cat);
@@ -171,13 +171,13 @@ class StorePage extends StatelessWidget {
                 children: [
           Stack(clipBehavior: Clip.none, children: [
             // store banner
-            BannerPhoto(imagesrc: NetworkImage(store.banner)),
+            BannerPhoto(imagesrc: NetworkImage(_fillerStore.banner)),
             // store profile
             Positioned(
                 left: 20,
                 top: MediaQuery.of(context).size.width - 80,
-                child:
-                    ProfilePicture(imagesrc: NetworkImage(store.profilePic))),
+                child: ProfilePicture(
+                    imagesrc: NetworkImage(_fillerStore.profilePic))),
             // return button
             Positioned(
                 left: 10,
@@ -186,7 +186,7 @@ class StorePage extends StatelessWidget {
                   onclick: () {
                     Navigator.of(context).pop();
                   },
-                  circleColor: store.customColor,
+                  circleColor: _fillerStore.customColor,
                 )),
           ]),
           // map for store
@@ -194,7 +194,7 @@ class StorePage extends StatelessWidget {
               margin: EdgeInsets.fromLTRB(120, 7, 0, 0),
               child: StyledMapView(
                 borderAmt: 5,
-                location: storelocation,
+                location: _fillerStoreLocation,
                 width: (width * 3) / 5,
                 height: (width * 2) / 11,
               )),
@@ -218,7 +218,7 @@ class StorePage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      for (MenuItem menuitem in foundmenuitems)
+                      for (MenuItem menuitem in _fillerMenuItems)
                         if (menuitem.categories.contains(category))
                           GestureDetector(
                               onTap: () {

@@ -17,7 +17,7 @@ import 'package:latlong/latlong.dart';
 import 'package:app/styles/constants.dart' as Constants;
 import 'package:app/views/orders/widgets/currentorderoptions.dart';
 
-var fillervals = [
+var _fillerVals = [
   OrderItem("1", "1", 2, "Chicken McNuggets", "not needed", 3.59, {
     'Drink': [OrderSelection(name: 'Chocolate Shake', price: 5.45)],
     'Sauces': [
@@ -36,8 +36,8 @@ var fillervals = [
   }),
 ];
 
-var myorder = Order(
-    orderItems: fillervals,
+var _fillerOrder = Order(
+    orderItems: _fillerVals,
     storePhoto:
         NetworkImage("https://images.safe.com/logos/customers/mcdonalds.png"),
     storeName: 'McDonalds',
@@ -48,7 +48,7 @@ var myorder = Order(
     orderInstructions: 'Leave at my door please.',
     startTime: 'Oct 5th 2020, 4:15pm');
 
-var store = Store(
+var _fillerStore = Store(
     id: "1",
     customColor: Constants.RED,
     userInfoId: "1",
@@ -60,6 +60,9 @@ var store = Store(
     deliveryFee: 5,
     profilePic: "https://images.safe.com/logos/customers/mcdonalds.png",
     bio: "");
+
+var _fillerAddress = "385 Morrish Rd, Toronto, ON";
+var _fillerExpectedDate = "Oct 2, 6:32pm";
 
 class OrderDetailsPage extends StatelessWidget {
   OrderDetailsPage({Key key}) : super(key: key);
@@ -86,7 +89,7 @@ class OrderDetailsPage extends StatelessWidget {
                 Container(
                     padding: EdgeInsets.fromLTRB(0, 30, 20, 20),
                     child: Text(
-                      "ORDER #${myorder.orderId}",
+                      "ORDER #${_fillerOrder.orderId}",
                       style: Constants.NORMAL_TEXT_BLACK,
                     )),
               ],
@@ -94,12 +97,12 @@ class OrderDetailsPage extends StatelessWidget {
         // store name
         Container(
           child: Text(
-            store.name,
+            _fillerStore.name,
             style: Constants.LARGE_TEXT_BLACK,
           ),
           padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
         ),
-        if (myorder.status != 'Current') buildCurrentOrderOptions(context),
+        if (_fillerOrder.status != 'Current') buildCurrentOrderOptions(context),
         // delivery address header
         Container(
             padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
@@ -107,7 +110,7 @@ class OrderDetailsPage extends StatelessWidget {
               children: [
                 Text("DELIVERING TO - "),
                 Text(
-                  "385 Morrish Rd, Toronto, ON",
+                  _fillerAddress,
                   style: TextStyle(color: Constants.YELLOW),
                 )
               ],
@@ -121,7 +124,7 @@ class OrderDetailsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Expected: Oct 2, 6:32pm",
+                  "Expected: $_fillerExpectedDate",
                   style: Constants.NORMAL_TEXT_BLACK,
                 ),
                 Align(
@@ -147,10 +150,10 @@ class OrderDetailsPage extends StatelessWidget {
               ],
             )),
         // all order details
-        for (OrderItem item in fillervals) OrderItemTile(orderItemObj: item),
+        for (OrderItem item in _fillerVals) OrderItemTile(orderItemObj: item),
         // FILLED old delivery notes
         StyledTextField(
-            value: myorder.orderInstructions,
+            value: _fillerOrder.orderInstructions,
             editable: false,
             hint: "Add Notes for the Store...",
             icon: Icon(Icons.edit)),
@@ -163,7 +166,7 @@ class OrderDetailsPage extends StatelessWidget {
         ),
         // delivery subtotal
         SubtotalTile(
-          allOrderItems: myorder.orderItems,
+          allOrderItems: _fillerOrder.orderItems,
           taxesPercentage: 0.13,
         ),
         Container(

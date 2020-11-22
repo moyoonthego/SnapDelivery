@@ -12,7 +12,7 @@ import 'package:latlong/latlong.dart';
 import 'package:app/styles/constants.dart' as Constants;
 import 'package:app/views/orders/widgets/sendmessage.dart' as SendMessage;
 
-var fillervals = [
+var _fillerVals = [
   OrderItem("1", "1", 2, "Chicken McNuggets", "not needed", 3.59, {
     'Drink': [OrderSelection(name: 'Chocolate Shake', price: 5.45)],
     'Sauces': [
@@ -31,9 +31,12 @@ var fillervals = [
   }),
 ];
 
-var myorders = [
+var _fillerTime = "6:32pm";
+var _fillerAddress = "385 Morrish Rd, Toronto, ON";
+
+var _fillerOrders = [
   Order(
-      orderItems: fillervals,
+      orderItems: _fillerVals,
       storePhoto:
           NetworkImage("https://images.safe.com/logos/customers/mcdonalds.png"),
       storeName: 'McDonalds',
@@ -44,7 +47,7 @@ var myorders = [
       orderInstructions: 'Leave at my door please.',
       startTime: 'Oct 5th 2020, 4:15pm'),
   Order(
-      orderItems: fillervals,
+      orderItems: _fillerVals,
       storePhoto: NetworkImage(
           "https://awards.brandingforum.org/wp-content/uploads/2015/01/Chatime-Logo.jpg"),
       storeName: 'ChaTime',
@@ -55,7 +58,7 @@ var myorders = [
       orderInstructions: 'Leave at my door please.',
       startTime: 'Oct 7th 2020, 4:15pm'),
   Order(
-      orderItems: fillervals,
+      orderItems: _fillerVals,
       storePhoto:
           NetworkImage("https://images.safe.com/logos/customers/mcdonalds.png"),
       storeName: 'McDonalds',
@@ -92,7 +95,7 @@ class TrackOrderPage extends StatelessWidget {
                 Container(
                     padding: EdgeInsets.fromLTRB(0, 30, 20, 20),
                     child: Text(
-                      "ORDER #${myorders[0].orderId}",
+                      "ORDER #${_fillerOrders[0].orderId}",
                       style: Constants.NORMAL_TEXT_BLACK,
                     )),
               ],
@@ -101,7 +104,7 @@ class TrackOrderPage extends StatelessWidget {
         Row(children: [
           Container(
               margin: EdgeInsets.fromLTRB(15, 10, 10, 15),
-              child: Text("6:32pm", style: Constants.GIANT_TEXT_BLACK)),
+              child: Text(_fillerTime, style: Constants.GIANT_TEXT_BLACK)),
           Text(
             "Estimated Arrival",
             style: Constants.NORMAL_TEXT_GRAY,
@@ -129,7 +132,7 @@ class TrackOrderPage extends StatelessWidget {
               children: [
                 Text("DELIVERING TO - "),
                 Text(
-                  "385 Morrish Rd, Toronto, ON",
+                  _fillerAddress,
                   style: TextStyle(color: Constants.YELLOW),
                 )
               ],

@@ -1,11 +1,12 @@
 import 'package:app/models/store.dart';
 import 'package:app/shared-assets/components/displays/item_tile.dart';
 import 'package:app/shared-assets/components/displays/store_tile.dart';
+import 'package:app/views/store/storepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:app/styles/constants.dart' as Constants;
 
-var fillervals = [
+var _fillerVals = [
   Store(
       id: "1",
       userInfoId: "1",
@@ -41,7 +42,7 @@ var fillervals = [
       bio: "Enjoy delicious McDonalds on us! Mcloving it! Thrice!")
 ];
 
-var fillercategories = [
+var _fillerCategories = [
   ItemTile(
       width: 90,
       height: 100,
@@ -80,7 +81,7 @@ var fillercategories = [
       label: 'Indian'),
 ];
 
-Widget homePageStatic() {
+Widget homePageStatic(BuildContext context) {
   return SingleChildScrollView(
     child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -91,7 +92,7 @@ Widget homePageStatic() {
               margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
               child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Row(children: fillercategories))),
+                  child: Row(children: _fillerCategories))),
           // header title for stores
           Container(
               margin: EdgeInsets.fromLTRB(10, 0, 0, 10),
@@ -102,16 +103,23 @@ Widget homePageStatic() {
                     style: Constants.NORMAL_TEXT_GRAY,
                   ))),
           // scroll column with selected nearby stores (pagination or MAX 5?)
-          for (Store store in fillervals)
-            Container(
-                margin: EdgeInsets.fromLTRB(0, 5, 0, 10),
-                child: StoreTile(
-                  imagesrc: NetworkImage(store.banner, scale: 1),
-                  storename: store.name,
-                  address: store.address,
-                  rating: store.rating,
-                  deliveryprice: store.deliveryFee,
-                ))
+          for (Store store in _fillerVals)
+            GestureDetector(
+              onTap: () {
+                // TODO: needs to open the right store page
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => StorePage()));
+              },
+              child: Container(
+                  margin: EdgeInsets.fromLTRB(0, 5, 0, 10),
+                  child: StoreTile(
+                    imagesrc: NetworkImage(store.banner, scale: 1),
+                    storename: store.name,
+                    address: store.address,
+                    rating: store.rating,
+                    deliveryprice: store.deliveryFee,
+                  )),
+            )
         ]),
   );
 }
